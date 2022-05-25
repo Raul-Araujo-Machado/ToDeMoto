@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+=======
+        <entry key="..\:/Users/kelly/OneDrive/Documentos/GitHub/PDS2/app/src/main/res/layout/activity_cadastro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kelly/OneDrive/Documentos/GitHub/PDS2/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>
