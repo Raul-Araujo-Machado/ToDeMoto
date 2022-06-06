@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void chamarCadastroMotociclista(View view){
-        Intent intent = new Intent(this, CadastroCliente.class);
+        Intent intent = new Intent(this, CadastroMotociclista.class);
         startActivity(intent);
     }
 }
