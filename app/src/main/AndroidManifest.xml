@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
+            android:name=".CadastroMotociclista"
+            android:exported="false" />
+        <activity
             android:name=".CadastroCliente"
             android:exported="false" />
         <activity
