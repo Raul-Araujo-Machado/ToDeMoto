@@ -4,7 +4,8 @@
     <item
         android:id="@+id/action_settings"
         android:checkable="false"
+        android:icon="@drawable/ic_perfil"
         android:orderInCategory="100"
         android:title="Perfil"
-        app:showAsAction="never" />
+        app:showAsAction="always" />
 </menu>
