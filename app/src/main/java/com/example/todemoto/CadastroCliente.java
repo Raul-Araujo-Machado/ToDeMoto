@@ -18,4 +18,8 @@ public class CadastroCliente extends AppCompatActivity {
         Intent intent = new Intent(this, PrincipalActivity.class);
         startActivity(intent);
     }
+    public void chamarLogin(View view){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+    }
 }
