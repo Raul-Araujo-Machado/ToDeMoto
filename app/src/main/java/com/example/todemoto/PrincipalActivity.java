@@ -3,12 +3,14 @@ package com.example.todemoto;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -31,6 +33,11 @@ public class PrincipalActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarPrincipal.toolbar);
+        binding.appBarPrincipal.toolbar.setOnMenuItemClickListener((Toolbar.OnMenuItemClickListener) item -> {
+            Intent intent = new Intent(PrincipalActivity.this, PerfilClienteActivity.class);
+            startActivity(intent);
+            return true;
+        });
         binding.appBarPrincipal.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
