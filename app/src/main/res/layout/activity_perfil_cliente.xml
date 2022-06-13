@@ -13,6 +13,7 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="326dp"
         android:text="Perfil"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

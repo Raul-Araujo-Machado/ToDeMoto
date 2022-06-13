@@ -1,5 +1,6 @@
 package com.example.todemoto;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -62,10 +63,5 @@ public class PrincipalActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_principal);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void chamarPerfil(View view){
-        Intent intent = new Intent(getApplicationContext(), PerfilClienteActivity.class);
-        startActivity(intent);
     }
 }
