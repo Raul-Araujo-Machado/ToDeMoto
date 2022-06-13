@@ -9,6 +9,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
+            android:name=".PrincipalActivity"
+            android:exported="false"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/Theme.ToDeMoto.NoActionBar" />
+        <activity
             android:name=".CadastroMotociclista"
             android:exported="false" />
         <activity
