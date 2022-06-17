@@ -6,21 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class CadastroMotociclista extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cadastro_motociclista);
     }
 
-    public void chamarCadastroCliente(View view){
-        Intent intent = new Intent(this, CadastroCliente.class);
-        startActivity(intent);
-    }
-
-    public void chamarCadastroMotociclista(View view){
-        Intent intent = new Intent(this, CadastroMotociclista.class);
+    public void chamarPrincipal(View view){
+        Intent intent = new Intent(this, PrincipalActivity.class);
         startActivity(intent);
     }
     public void chamarLogin(View view){

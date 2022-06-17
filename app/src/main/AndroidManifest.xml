@@ -9,6 +9,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EdicaoClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PerfilClienteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrincipalActivity"
+            android:exported="false"
+            android:label="@string/title_activity_principal"
+            android:theme="@style/Theme.ToDeMoto.NoActionBar" />
+        <activity
+            android:name=".CadastroMotociclista"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroCliente"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
