@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "317553417449",
+    "project_id": "todemoto-92b3d",
+    "storage_bucket": "todemoto-92b3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:317553417449:android:7caeabb87ca82db203e478",
+        "android_client_info": {
+          "package_name": "com.example.todemoto"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "317553417449-hcd3b8j7bm9a50v4fbgmmihnfdsbjdl8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKeIiyPjLMMwixqlULoPGjInLoPkmL0P0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "317553417449-hcd3b8j7bm9a50v4fbgmmihnfdsbjdl8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

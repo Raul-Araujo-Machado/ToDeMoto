@@ -19,15 +19,20 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.todemoto.databinding.ActivityPrincipalBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class PrincipalActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityPrincipalBinding binding;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         binding = ActivityPrincipalBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -70,5 +75,16 @@ public class PrincipalActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_principal);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser current = FirebaseAuth.getInstance().getCurrentUser();
+        if (current == null){
+            Intent intent = new Intent(PrincipalActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 }
