@@ -54,13 +54,9 @@ public class Motociclista {
         this.telefone = telefone;
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() {return id;}
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public void setId(String id) {this.id = id;}
 
     public void salvarMotociclista(){
         DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();

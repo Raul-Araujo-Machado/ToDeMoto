@@ -75,27 +75,28 @@ public class CadastroCliente extends AppCompatActivity {
         botaoRegistroCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cliente cliente = new Cliente();
                 //resgatando o texto digitado pelo usuario
-                cliente.setEmail(emailRegistroCliente.getText().toString());
-                cliente.setNome(nomeRegistroCliente.getText().toString());
                 String senha = senhaRegistroCliente.getText().toString();
                 String confsenha = senhaRegistroConfCliente.getText().toString();
+                String email = emailRegistroCliente.getText().toString();
+                String nome = nomeRegistroCliente.getText().toString();
 
                 //verificando se o usuario não deixou nada em branco
-                if (!TextUtils.isEmpty(cliente.getEmail()) || !TextUtils.isEmpty(cliente.getNome()) ||!TextUtils.isEmpty(senha) || !TextUtils.isEmpty(confsenha)){
-
+                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(nome) || !TextUtils.isEmpty(senha) || !TextUtils.isEmpty(confsenha)){
                     //verificando se o usuario digitou senhas iguais. Caso sim, posso inserir os dados no banco
                     if (senha.equals(confsenha)){
                         //evento para inserir no banco. No firebase ficaria assim:
-
+                        Cliente cliente = new Cliente();
+                        cliente.setEmail(emailRegistroCliente.getText().toString());
+                        cliente.setNome(nomeRegistroCliente.getText().toString());
                         mAuth.createUserWithEmailAndPassword(cliente.getEmail(),senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
                                     cliente.setId(mAuth.getUid());
+
                                     cliente.salvarCliente();
-                                    chamarPrincipal();
+                                    chamarLogin();
                                 }else{
                                     String erro = task.getException().getMessage();
                                     Toast.makeText(CadastroCliente.this, ""+erro, Toast.LENGTH_SHORT).show();
@@ -114,12 +115,7 @@ public class CadastroCliente extends AppCompatActivity {
         });
     }
 
-    public void chamarPrincipal(){
-        Intent intent = new Intent(this, PrincipalActivity.class);
-        startActivity(intent);
-        finish();
-    }
-    public void chamarLogin(View view){
+    public void chamarLogin(){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
