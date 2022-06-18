@@ -38,21 +38,13 @@ public class Motociclista {
         this.email = email;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
+    public String getDescricao() {return descricao;}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+    public void setDescricao(String descricao) {this.descricao = descricao;}
 
-    public String getTelefone() {
-        return telefone;
-    }
+    public String getTelefone() {return telefone;}
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
+    public void setTelefone(String telefone) {this.telefone = telefone;}
 
     public String getId() {return id;}
 

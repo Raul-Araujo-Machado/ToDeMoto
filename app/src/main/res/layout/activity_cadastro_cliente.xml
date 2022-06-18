@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nomeRegistroCliente" />
 
     <Button
-        android:id="@+id/botaoRegistroCliente"
+        android:id="@+id/botaoRegistroMotociclista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -90,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:text="Mostrar senha"
-        app:layout_constraintBottom_toTopOf="@+id/botaoRegistroCliente"
+        app:layout_constraintBottom_toTopOf="@+id/botaoRegistroMotociclista"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senhaRegistroConfCliente" />
@@ -103,11 +103,11 @@
         android:layout_marginBottom="16dp"
         android:text="Já é registrado?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroLogar"
+        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroLogarMotociclista"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/botaoRegistroLogar"
+        android:id="@+id/botaoRegistroLogarMotociclista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="130dp"

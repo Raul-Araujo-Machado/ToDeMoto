@@ -1,11 +1,10 @@
 package com.example.todemoto;
 
-import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -21,12 +20,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.todemoto.databinding.ActivityPrincipalBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 public class PrincipalActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityPrincipalBinding binding;
-
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -86,5 +88,7 @@ public class PrincipalActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
     }
+
 }

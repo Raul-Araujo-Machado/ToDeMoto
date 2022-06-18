@@ -60,7 +60,7 @@
         android:layout_marginBottom="16dp"
         android:text="Já é registrado?"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroLogar"
+        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroLogarMotociclista"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

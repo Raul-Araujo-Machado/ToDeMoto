@@ -17,11 +17,13 @@ public class MainActivity extends AppCompatActivity {
     public void chamarCadastroCliente(View view){
         Intent intent = new Intent(this, CadastroCliente.class);
         startActivity(intent);
+
     }
 
     public void chamarCadastroMotociclista(View view){
         Intent intent = new Intent(this, CadastroMotociclista.class);
         startActivity(intent);
+
     }
     public void chamarLogin(View view){
         Intent intent = new Intent(this, LoginActivity.class);

@@ -3,7 +3,6 @@ package com.example.todemoto;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,10 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todemoto.LoginActivity;
 import com.example.todemoto.Model.Cliente;
-import com.example.todemoto.PrincipalActivity;
-import com.example.todemoto.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -50,8 +46,8 @@ public class CadastroCliente extends AppCompatActivity {
         nomeRegistroCliente = findViewById(R.id.nomeRegistroCliente);
         senhaRegistroCliente = findViewById(R.id.senhaRegistroCliente);
         senhaRegistroConfCliente = findViewById(R.id.senhaRegistroConfCliente);
-        botaoRegistroCliente = findViewById(R.id.botaoRegistroCliente);
-        botaoRegistroLogar = findViewById(R.id.botaoRegistroLogar);
+        botaoRegistroCliente = findViewById(R.id.botaoRegistroMotociclista);
+        botaoRegistroLogar = findViewById(R.id.botaoRegistroLogarMotociclista);
         checkBoxRegistroCliente = findViewById(R.id.checkBoxRegistroCliente);
 
         //criando um evento para quando o usuario decidir ver a senha

@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nomeRegistroMotociclista" />
 
     <Button
-        android:id="@+id/botaoRegistroCliente"
+        android:id="@+id/botaoRegistroMotociclista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="chamarPrincipal"
@@ -62,7 +62,7 @@
         android:layout_marginBottom="100dp"
         android:text="Cancelar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroCliente"
+        app:layout_constraintEnd_toStartOf="@+id/botaoRegistroMotociclista"
         app:layout_constraintHorizontal_bias="0.354"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/emailRegistroCliente" />
