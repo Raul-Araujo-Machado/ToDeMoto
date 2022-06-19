@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/drawable/ic_disponiveis.xml" value="0.1935" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/drawable/ic_favoritos.xml" value="0.1935" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/drawable/ic_historico.xml" value="0.1935" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1935" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/activity_cadastro_cliente.xml" value="0.33" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/activity_cadastro_motociclista.xml" value="0.33" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/activity_edicao_cliente.xml" value="0.33" />
@@ -13,7 +17,10 @@
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/activity_principal.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/app_bar_principal.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/content_principal.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/nav_header_principal.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/fragment_disponiveis.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/fragment_favoritos.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/fragment_historico.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/layout/nav_header_principal.xml" value="0.33" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/menu/activity_main_drawer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/raula/Documents/Estudos/PDS2/app/src/main/res/menu/principal.xml" value="0.25" />
       </map>

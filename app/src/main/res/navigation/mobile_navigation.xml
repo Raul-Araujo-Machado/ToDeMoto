@@ -6,20 +6,20 @@
     app:startDestination="@+id/nav_home">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.todemoto.ui.home.HomeFragment"
+        android:id="@+id/nav_disponiveis"
+        android:name="com.example.todemoto.ui.Disponiveis.DisponiveisFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_disponiveis" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.todemoto.ui.gallery.GalleryFragment"
+        android:id="@+id/nav_favoritos"
+        android:name="com.example.todemoto.ui.Favoritos.FavoritosFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_favoritos" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.todemoto.ui.slideshow.SlideshowFragment"
+        android:id="@+id/nav_historico"
+        android:name="com.example.todemoto.ui.Historico.HistoricoFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_historico" />
 </navigation>
