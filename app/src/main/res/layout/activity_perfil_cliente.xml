@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nomePerfilMotociclista"
+        android:id="@+id/nomePerfilCliente"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -52,7 +52,7 @@
         android:text="Email:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomePerfilMotociclista" />
+        app:layout_constraintTop_toBottomOf="@+id/nomePerfilCliente" />
 
     <TextView
         android:id="@+id/textView9"
@@ -72,11 +72,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Carl Johnson"
-        app:layout_constraintBaseline_toBaselineOf="@+id/nomePerfilMotociclista"
-        app:layout_constraintStart_toEndOf="@+id/nomePerfilMotociclista" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/nomePerfilCliente"
+        app:layout_constraintStart_toEndOf="@+id/nomePerfilCliente" />
 
     <TextView
-        android:id="@+id/emailPerfilMotociclista"
+        android:id="@+id/emailPerfilCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -94,7 +94,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/sairPerfilMotociclista"
+        android:id="@+id/sairPerfilCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -105,7 +105,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <Button
-        android:id="@+id/excluirPerfilMotociclista"
+        android:id="@+id/excluirPerfilCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -114,5 +114,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sairPerfilMotociclista" />
+        app:layout_constraintTop_toBottomOf="@+id/sairPerfilCliente" />
 </androidx.constraintlayout.widget.ConstraintLayout>

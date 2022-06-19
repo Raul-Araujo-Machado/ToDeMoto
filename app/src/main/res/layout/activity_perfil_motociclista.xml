@@ -25,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:onClick="chamarEditarMotociclista"
         android:text="Editar Perfil"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -140,7 +139,7 @@
         app:layout_constraintStart_toEndOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/sairPerfilMotociclista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -158,7 +157,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toBottomOf="@+id/sairPerfilMotociclista" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

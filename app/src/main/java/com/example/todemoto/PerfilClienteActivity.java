@@ -20,7 +20,7 @@ public class PerfilClienteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_perfil_cliente);
 
         mAuth = FirebaseAuth.getInstance();
-        sairCliente = findViewById(R.id.sairPerfilMotociclista);
+        sairCliente = findViewById(R.id.sairPerfilCliente);
         sairCliente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
