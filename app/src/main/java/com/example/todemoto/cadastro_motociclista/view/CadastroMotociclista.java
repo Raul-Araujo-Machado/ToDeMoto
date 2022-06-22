@@ -1,8 +1,10 @@
-package com.example.todemoto;
+package com.example.todemoto.cadastro_motociclista.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,13 +18,18 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todemoto.Model.Motociclista;
+import com.example.todemoto.LoginActivity;
+import com.example.todemoto.PerfilMotociclistaActivity;
+import com.example.todemoto.R;
+import com.example.todemoto.cadastro_motociclista.CadastroMotociclistaContracts;
+import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
+import com.example.todemoto.cadastro_motociclista.presenter.CadastroMotociclistaPresenter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class CadastroMotociclista extends AppCompatActivity {
+public class CadastroMotociclista extends AppCompatActivity implements CadastroMotociclistaContracts.View {
 
     private EditText emailRegistroMotociclista;
     private EditText nomeRegistroMotociclista;
@@ -34,13 +41,14 @@ public class CadastroMotociclista extends AppCompatActivity {
     private Button botaoRegistroMotociclista;
     private TextView botaoRegistroLogarMotociclista;
     private FirebaseAuth mAuth;
+    private CadastroMotociclistaContracts.Presenter presenter;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_motociclista);
-
+        presenter = new CadastroMotociclistaPresenter(this);
         mAuth = FirebaseAuth.getInstance();
         emailRegistroMotociclista = findViewById(R.id.emailRegistroMotociclista);
         nomeRegistroMotociclista = findViewById(R.id.nomeRegistroMotociclista);
@@ -64,19 +72,8 @@ public class CadastroMotociclista extends AppCompatActivity {
 
                 if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(nome) && !TextUtils.isEmpty(descricao) && !TextUtils.isEmpty(telefone) && !TextUtils.isEmpty(senha) && !TextUtils.isEmpty(confsenha)){
                     if(senha.equals(confsenha)){
-                        mAuth.createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                Motociclista motociclista = new Motociclista();
-                                motociclista.setId(mAuth.getUid());
-                                motociclista.setEmail(email);
-                                motociclista.setNome(nome);
-                                motociclista.setDescricao(descricao);
-                                motociclista.setTelefone(telefone);
-                                motociclista.salvarMotociclista();
-                                chamarPerfilMotociclista();
-                            }
-                        });
+                        presenter.salvarMotociclista(new Motociclista());
+
                     }else{
                         Toast.makeText(CadastroMotociclista.this, "Senhas diferentes!", Toast.LENGTH_SHORT).show();
                     }
@@ -111,5 +108,15 @@ public class CadastroMotociclista extends AppCompatActivity {
     public void chamarLogin(View view){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onSavedError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public Context getContext() {
+        return getApplicationContext();
     }
 }

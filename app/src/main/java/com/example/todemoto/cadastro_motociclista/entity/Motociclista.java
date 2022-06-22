@@ -1,4 +1,4 @@
-package com.example.todemoto.Model;
+package com.example.todemoto.cadastro_motociclista.entity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -50,8 +50,6 @@ public class Motociclista {
 
     public void setId(String id) {this.id = id;}
 
-    public void salvarMotociclista(){
-        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-        referencia.child("Usuarios/Motociclista").child(getId()).setValue(this);
-    }
+
+
 }
