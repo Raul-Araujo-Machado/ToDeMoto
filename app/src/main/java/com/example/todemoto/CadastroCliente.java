@@ -78,7 +78,7 @@ public class CadastroCliente extends AppCompatActivity {
                 String nome = nomeRegistroCliente.getText().toString();
 
                 //verificando se o usuario não deixou nada em branco
-                if (!TextUtils.isEmpty(email) || !TextUtils.isEmpty(nome) || !TextUtils.isEmpty(senha) || !TextUtils.isEmpty(confsenha)){
+                if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(nome) && !TextUtils.isEmpty(senha) && !TextUtils.isEmpty(confsenha)){
                     //verificando se o usuario digitou senhas iguais. Caso sim, posso inserir os dados no banco
                     if (senha.equals(confsenha)){
                         //evento para inserir no banco. No firebase ficaria assim:
@@ -92,7 +92,7 @@ public class CadastroCliente extends AppCompatActivity {
                                     cliente.setId(mAuth.getUid());
 
                                     cliente.salvarCliente();
-                                    chamarLogin();
+                                    chamarPrincipal();
                                 }else{
                                     String erro = task.getException().getMessage();
                                     Toast.makeText(CadastroCliente.this, ""+erro, Toast.LENGTH_SHORT).show();
@@ -111,8 +111,8 @@ public class CadastroCliente extends AppCompatActivity {
         });
     }
 
-    public void chamarLogin(){
-        Intent intent = new Intent(this, LoginActivity.class);
+    public void chamarPrincipal(){
+        Intent intent = new Intent(this, PrincipalActivity.class);
         startActivity(intent);
         finish();
     }

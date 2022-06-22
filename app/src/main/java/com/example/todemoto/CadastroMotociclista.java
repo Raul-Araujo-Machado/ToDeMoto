@@ -62,7 +62,7 @@ public class CadastroMotociclista extends AppCompatActivity {
                 String senha = senhaRegistroMotociclista.getText().toString();
                 String confsenha = senhaRegistroConfMotociclista.getText().toString();
 
-                if(!TextUtils.isEmpty(email) || !TextUtils.isEmpty(nome) || !TextUtils.isEmpty(senha) || !TextUtils.isEmpty(confsenha)){
+                if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(nome) && !TextUtils.isEmpty(descricao) && !TextUtils.isEmpty(telefone) && !TextUtils.isEmpty(senha) && !TextUtils.isEmpty(confsenha)){
                     if(senha.equals(confsenha)){
                         mAuth.createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
