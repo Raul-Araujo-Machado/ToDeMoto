@@ -72,7 +72,7 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
 
                 if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(nome) && !TextUtils.isEmpty(descricao) && !TextUtils.isEmpty(telefone) && !TextUtils.isEmpty(senha) && !TextUtils.isEmpty(confsenha)){
                     if(senha.equals(confsenha)){
-                        presenter.salvarMotociclista(new Motociclista());
+                        presenter.salvarMotociclista(new Motociclista(nome, email, descricao, telefone, senha));
 
                     }else{
                         Toast.makeText(CadastroMotociclista.this, "Senhas diferentes!", Toast.LENGTH_SHORT).show();
@@ -101,9 +101,7 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
     }
 
     public void chamarPerfilMotociclista(){
-        Intent intent = new Intent(CadastroMotociclista.this, PerfilMotociclistaActivity.class);
-        startActivity(intent);
-        finish();
+
     }
     public void chamarLogin(View view){
         Intent intent = new Intent(this, LoginActivity.class);

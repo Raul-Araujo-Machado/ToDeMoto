@@ -9,6 +9,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class CadastroMotociclistaInteractor implements CadastroMotociclistaContracts.Interactor {
 
@@ -32,14 +34,9 @@ public class CadastroMotociclistaInteractor implements CadastroMotociclistaContr
 
     @Override
     public void salvaMotociclistaRT(Motociclista motociclista) {
-        Motociclista motociclista = new Motociclista();
-        motociclista.setId(mAuth.getUid());
-        motociclista.setEmail(email);
-        motociclista.setNome(nome);
-        motociclista.setDescricao(descricao);
-        motociclista.setTelefone(telefone);
-        motociclista.salvarMotociclista();
-        chamarPerfilMotociclista();
+        System.out.println("teste "+motociclista.toString());
+        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+        referencia.child("Usuarios/Motociclista").child(motociclista.getId()).setValue(motociclista);
         presenter.onMotociclistaSaved(motociclista);
     }
 }

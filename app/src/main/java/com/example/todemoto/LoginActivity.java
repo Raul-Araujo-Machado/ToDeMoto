@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -67,7 +68,10 @@ public class LoginActivity extends AppCompatActivity {
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                                         Motociclista m = (Motociclista) snapshot.getValue(Motociclista.class);
                                        int res = (int) snapshot.getChildrenCount();
-                                       if (res > 0){
+                                        System.out.println("teste"+res);
+                                        Toast.makeText(LoginActivity.this, "oii:" + res, Toast.LENGTH_SHORT).show();
+
+                                        if (res > 0){
                                            chamarPerfilMotociclista(m);
                                        }else{
                                            chamarPrincipalCliente();

@@ -90,7 +90,6 @@ public class CadastroCliente extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()){
                                     cliente.setId(mAuth.getUid());
-
                                     cliente.salvarCliente();
                                     chamarPrincipal();
                                 }else{

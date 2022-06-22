@@ -42,9 +42,5 @@ public class Cliente {
         this.id = id;
     }
 
-    public void salvarCliente(){
-        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-        referencia.child("Usuarios/Cliente").child(getId()).setValue(this);
-    }
 
 }

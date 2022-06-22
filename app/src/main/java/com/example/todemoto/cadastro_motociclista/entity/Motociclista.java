@@ -1,25 +1,23 @@
 package com.example.todemoto.cadastro_motociclista.entity;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class Motociclista {
 
     private String nome;
     private String email;
     private String descricao;
     private String telefone;
+    private String senha;
     private String id;
 
     public Motociclista() {
     }
 
-    public Motociclista(String nome, String email, String descricao, String telefone, String id) {
+    public Motociclista(String nome, String email, String descricao, String telefone, String senha) {
         this.nome = nome;
         this.email = email;
         this.descricao = descricao;
         this.telefone = telefone;
-        this.id = id;
+        this.senha = senha;
     }
 
     public String getNome() {
@@ -38,18 +36,47 @@ public class Motociclista {
         this.email = email;
     }
 
-    public String getDescricao() {return descricao;}
+    public String getDescricao() {
+        return descricao;
+    }
 
-    public void setDescricao(String descricao) {this.descricao = descricao;}
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
-    public String getTelefone() {return telefone;}
+    public String getTelefone() {
+        return telefone;
+    }
 
-    public void setTelefone(String telefone) {this.telefone = telefone;}
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
 
-    public String getId() {return id;}
+    public String getSenha() {
+        return senha;
+    }
 
-    public void setId(String id) {this.id = id;}
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    @Override
+    public String toString() {
+        return "Motociclista{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", senha='" + senha + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 }
