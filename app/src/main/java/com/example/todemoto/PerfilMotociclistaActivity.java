@@ -18,9 +18,10 @@ public class PerfilMotociclistaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil_motociclista);
-
+        System.out.println("teste: Entrei no perfil do motociclista");
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         sairPerfilMotociclista = findViewById(R.id.sairPerfilMotociclista);
+
         sairPerfilMotociclista.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,6 +1,8 @@
 package com.example.todemoto.cadastro_motociclista.entity;
 
-public class Motociclista {
+import java.io.Serializable;
+
+public class Motociclista implements Serializable {
 
     private String nome;
     private String email;

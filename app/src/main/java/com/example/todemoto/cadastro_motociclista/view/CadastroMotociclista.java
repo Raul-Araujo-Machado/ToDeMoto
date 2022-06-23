@@ -100,9 +100,7 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
 
     }
 
-    public void chamarPerfilMotociclista(){
 
-    }
     public void chamarLogin(View view){
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);

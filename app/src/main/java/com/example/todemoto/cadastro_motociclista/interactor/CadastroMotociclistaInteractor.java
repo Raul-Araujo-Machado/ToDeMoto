@@ -6,6 +6,8 @@ import com.example.todemoto.cadastro_motociclista.CadastroMotociclistaContracts;
 import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
 import com.example.todemoto.cadastro_motociclista.presenter.CadastroMotociclistaPresenter;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -34,9 +36,22 @@ public class CadastroMotociclistaInteractor implements CadastroMotociclistaContr
 
     @Override
     public void salvaMotociclistaRT(Motociclista motociclista) {
-        System.out.println("teste "+motociclista.toString());
+
         DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-        referencia.child("Usuarios/Motociclista").child(motociclista.getId()).setValue(motociclista);
-        presenter.onMotociclistaSaved(motociclista);
+        Task<Void> resposta = referencia.child("Usuarios").child("Motociclista").child(motociclista.getId()).setValue(motociclista);
+        resposta.addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                presenter.onMotociclistaSaved(motociclista);
+
+            }
+        });
+        resposta.addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                presenter.onSavedErrorRT(e.getLocalizedMessage());
+                e.printStackTrace();
+            }
+        });
     }
 }

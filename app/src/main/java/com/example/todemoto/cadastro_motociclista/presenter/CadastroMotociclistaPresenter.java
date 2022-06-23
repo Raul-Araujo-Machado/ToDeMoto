@@ -14,7 +14,7 @@ public class CadastroMotociclistaPresenter implements CadastroMotociclistaContra
 
     public CadastroMotociclistaPresenter(CadastroMotociclistaContracts.View cadastroMotociclista) {
         this.view = cadastroMotociclista;
-        this.router = new CadastroMotociclistaRouter(view.getContext());
+        this.router = new CadastroMotociclistaRouter(view);
         this.interactor = new CadastroMotociclistaInteractor(this);
     }
 
@@ -25,6 +25,7 @@ public class CadastroMotociclistaPresenter implements CadastroMotociclistaContra
 
     @Override
     public void onMotociclistaSaved(Motociclista motociclista) {
+        System.out.println("teste: Entrei no presenter");
         router.goToPerfilMotociclista(motociclista);
     }
 
@@ -35,11 +36,11 @@ public class CadastroMotociclistaPresenter implements CadastroMotociclistaContra
 
     @Override
     public void onSavedErrorAuth(String message) {
-
+        view.onSavedError("Erro durante autenticação: "+message);
     }
 
     @Override
     public void onSavedErrorRT(String message) {
-
+        view.onSavedError("Erro durante o registro no banco: "+message);
     }
 }
