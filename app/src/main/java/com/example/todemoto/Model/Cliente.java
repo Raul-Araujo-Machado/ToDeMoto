@@ -3,7 +3,9 @@ package com.example.todemoto.Model;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Cliente {
+import java.io.Serializable;
+
+public class Cliente implements Serializable {
     private String nome;
     private String email;
     private String id;
@@ -16,6 +18,7 @@ public class Cliente {
         this.email = email;
         this.id = id;
     }
+
 
     public String getNome() {
         return nome;

@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
+
 public class PrincipalActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -68,6 +70,9 @@ public class PrincipalActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_principal);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+
     }
 
     @Override
@@ -84,16 +89,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser current = FirebaseAuth.getInstance().getCurrentUser();
-        if (current == null){
-            Intent intent = new Intent(PrincipalActivity.this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
 
-    }
+
 
 }

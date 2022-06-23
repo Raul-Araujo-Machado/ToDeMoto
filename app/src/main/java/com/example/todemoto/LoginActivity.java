@@ -28,6 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.Serializable;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText emailLogin;
@@ -66,10 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        Motociclista m = (Motociclista) snapshot.getValue(Motociclista.class);
+                                        //Motociclista m = (Motociclista) snapshot.getValue(Motociclista.class);
+
                                        int res = (int) snapshot.getChildrenCount();
+                                        System.out.println("teste"+ res);
                                        if (res > 0){
-                                           chamarPerfilMotociclista(m);
+                                           chamarPerfilMotociclista();
                                        }else{
                                            chamarPrincipalCliente();
                                        }
@@ -109,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void chamarPerfilMotociclista(Motociclista m){
+    public void chamarPerfilMotociclista(){
         Intent intent = new Intent(this, PerfilMotociclistaActivity.class);
         startActivity(intent);
         finish();

@@ -45,7 +45,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textbererebarara"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -63,13 +63,13 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="300dp"
-        android:text="Senha:"
+        android:text="Telefone:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintTop_toBottomOf="@+id/textbererebarara" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/nomeMotociclistaPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -78,16 +78,16 @@
         app:layout_constraintStart_toEndOf="@+id/nomePerfilMotociclista" />
 
     <TextView
-        android:id="@+id/emailPerfilMotociclista"
+        android:id="@+id/emailMotociclistaPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="carljohnsonSMG@outlook.com"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-        app:layout_constraintStart_toEndOf="@+id/textView8" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textbererebarara"
+        app:layout_constraintStart_toEndOf="@+id/textbererebarara" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/telefoneMotociclistaPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textview4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -130,13 +130,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/descricaoMotociclistaPerfil"
         android:layout_width="291dp"
         android:layout_height="78dp"
         android:layout_marginStart="8dp"
         android:text="Aqui um motociclista pode falar um pouco de sua carreira, de seus valores, seu tempo de profissão ... é um espaço livre para descrição com até 250 caracteres."
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintStart_toEndOf="@+id/textView13" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/textview4"
+        app:layout_constraintStart_toEndOf="@+id/textview4" />
 
     <Button
         android:id="@+id/sairPerfilMotociclista"
@@ -146,7 +146,7 @@
         android:text="Sair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/descricaoMotociclistaPerfil" />
 
     <Button
         android:id="@+id/button5"

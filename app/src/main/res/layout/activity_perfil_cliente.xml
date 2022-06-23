@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/nomePerfilCliente"
+        android:id="@+id/nome"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/email"
         android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -52,57 +52,36 @@
         android:text="Email:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomePerfilCliente" />
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="58dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="300dp"
-        android:text="Senha:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/nomeClientePerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Carl Johnson"
-        app:layout_constraintBaseline_toBaselineOf="@+id/nomePerfilCliente"
-        app:layout_constraintStart_toEndOf="@+id/nomePerfilCliente" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/nome"
+        app:layout_constraintStart_toEndOf="@+id/nome" />
 
     <TextView
-        android:id="@+id/emailPerfilCliente"
+        android:id="@+id/emailClientePerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="carljohnsonSMG@outlook.com"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-        app:layout_constraintStart_toEndOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="*******"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView9"
-        app:layout_constraintStart_toEndOf="@+id/textView9" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/email"
+        app:layout_constraintStart_toEndOf="@+id/email" />
 
     <Button
         android:id="@+id/sairPerfilCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="80dp"
         android:text="Sair"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <Button
         android:id="@+id/excluirPerfilCliente"
