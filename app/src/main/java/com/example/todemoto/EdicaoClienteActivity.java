@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.todemoto.Model.Cliente;
 import com.google.firebase.auth.FirebaseAuth;
@@ -74,18 +75,20 @@ public class EdicaoClienteActivity extends AppCompatActivity {
         atualizaClienteEdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Editable n = nomeClienteEdicao.getText();
-                Editable e = emailClienteEdicao.getText();
+                String n = nomeClienteEdicao.getText().toString();
+                String e = emailClienteEdicao.getText().toString();
                 String user = mAuth.getUid();
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Usuarios/Cliente/" + user);
+                DatabaseReference myRef = database.getReference("Usuarios").child("Cliente").child(user);
                 myRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         Cliente c = (Cliente) snapshot.getValue(Cliente.class);
                         System.out.println("teste"+c.getNome());
-                        myRef.child("Usuarios").child(c.getId()).child("nome").setValue(n);
-                        myRef.child("Usuarios").child(c.getId()).child("nome").setValue(e);
+                        myRef.child("nome").setValue(n);
+                        myRef.child("email").setValue(e);
+                        Toast.makeText(EdicaoClienteActivity.this, "Dados atualizados!", Toast.LENGTH_SHORT).show();
+                        chamarPerfil();
                     }
 
                     @Override
@@ -95,5 +98,10 @@ public class EdicaoClienteActivity extends AppCompatActivity {
                 });
             }
         });
+    }
+    public void chamarPerfil(){
+        Intent intent = new Intent(this, PerfilClienteActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

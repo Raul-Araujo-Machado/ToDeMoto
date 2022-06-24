@@ -9,14 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
+            android:name=".EdicaoMotociclistaActivity"
+            android:exported="false" />
+        <activity
             android:name=".Loading"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".PerfilMotociclistaActivity"
@@ -34,9 +36,7 @@
             android:name=".PrincipalActivity"
             android:exported="false"
             android:label="@string/title_activity_principal"
-            android:theme="@style/Theme.ToDeMoto.NoActionBar"/>
-
-
+            android:theme="@style/Theme.ToDeMoto.NoActionBar" />
         <activity
             android:name=".CadastroMotociclista"
             android:exported="false" />

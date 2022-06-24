@@ -24,6 +24,7 @@ public class PerfilMotociclistaActivity extends AppCompatActivity {
     private TextView emailMotociclistaPerfil;
     private TextView telefoneMotociclistaPerfil;
     private TextView descricaoMotociclistaPerfil;
+    private Button editarMotociclistaPerfil;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
@@ -37,8 +38,10 @@ public class PerfilMotociclistaActivity extends AppCompatActivity {
         emailMotociclistaPerfil = findViewById(R.id.emailMotociclistaPerfil);
         telefoneMotociclistaPerfil = findViewById(R.id.telefoneMotociclistaPerfil);
         descricaoMotociclistaPerfil = findViewById(R.id.descricaoMotociclistaPerfil);
+        editarMotociclistaPerfil = findViewById(R.id.editarMotociclistaPerfil);
 
         carregaInformações();
+        chamarEdicaoMotociclista();
 
         sairPerfilMotociclista = findViewById(R.id.sairPerfilMotociclista);
         sairPerfilMotociclista.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +73,17 @@ public class PerfilMotociclistaActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+    }
+
+    public void chamarEdicaoMotociclista(){
+        editarMotociclistaPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PerfilMotociclistaActivity.this, EdicaoMotociclistaActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }
