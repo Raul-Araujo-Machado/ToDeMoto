@@ -27,7 +27,7 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".EdicaoClienteActivity"
+            android:name=".edicao_cliente.view.EdicaoClienteActivity"
             android:exported="false" />
         <activity
             android:name=".PerfilClienteActivity"
@@ -38,10 +38,10 @@
             android:label="@string/title_activity_principal"
             android:theme="@style/Theme.ToDeMoto.NoActionBar" />
         <activity
-            android:name=".CadastroMotociclista"
+            android:name=".cadastro_motociclista.view.CadastroMotociclista"
             android:exported="false" />
         <activity
-            android:name=".CadastroCliente"
+            android:name=".cadastro_cliente.view.CadastroCliente"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -10,8 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.todemoto.Model.Cliente;
-import com.example.todemoto.Model.Motociclista;
+import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

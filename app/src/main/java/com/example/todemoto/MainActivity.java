@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.todemoto.cadastro_cliente.view.CadastroCliente;
+import com.example.todemoto.cadastro_motociclista.view.CadastroMotociclista;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

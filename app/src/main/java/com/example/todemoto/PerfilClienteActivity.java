@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.todemoto.Model.Cliente;
-import com.example.todemoto.Model.Motociclista;
+import com.example.todemoto.cadastro_cliente.entity.Cliente;
+import com.example.todemoto.edicao_cliente.view.EdicaoClienteActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

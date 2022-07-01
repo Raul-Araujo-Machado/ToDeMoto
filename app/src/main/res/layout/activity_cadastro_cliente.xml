@@ -5,7 +5,7 @@
     android:id="@+id/checkBoxRegistro"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroCliente">
+    tools:context=".cadastro_cliente.view.CadastroCliente">
 
     <TextView
         android:id="@+id/textView2"
