@@ -17,8 +17,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todemoto.LoginActivity;
-import com.example.todemoto.PerfilMotociclistaActivity;
+import com.example.todemoto.login.view.LoginActivity;
+import com.example.todemoto.perfil_motociclista.view.PerfilMotociclistaActivity;
 import com.example.todemoto.R;
 import com.example.todemoto.cadastro_motociclista.CadastroMotociclistaContracts;
 import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
@@ -39,7 +39,6 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
     private EditText telefoneRegistroMotociclista;
     private Button botaoRegistroMotociclista;
     private TextView botaoRegistroLogarMotociclista;
-    private FirebaseAuth mAuth;
     private CadastroMotociclistaPresenter presenter;
 
 
@@ -48,7 +47,6 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_motociclista);
         presenter = new CadastroMotociclistaPresenter(this);
-        mAuth = FirebaseAuth.getInstance();
         emailRegistroMotociclista = findViewById(R.id.emailRegistroMotociclista);
         nomeRegistroMotociclista = findViewById(R.id.nomeRegistroMotociclista);
         senhaRegistroMotociclista = findViewById(R.id.senhaRegistroMotociclista);
@@ -68,28 +66,24 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
                 String telefone = telefoneRegistroMotociclista.getText().toString();
                 String senha = senhaRegistroMotociclista.getText().toString();
                 String confsenha = senhaRegistroConfMotociclista.getText().toString();
-
+                boolean disponivel = false;
                 if(!TextUtils.isEmpty(email) && !TextUtils.isEmpty(nome) && !TextUtils.isEmpty(descricao) && !TextUtils.isEmpty(telefone) && !TextUtils.isEmpty(senha) && !TextUtils.isEmpty(confsenha)){
                     if(senha.equals(confsenha)){
-                        mAuth.createUserWithEmailAndPassword(email,senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                Motociclista motociclista = new Motociclista();
-                                motociclista.setId(mAuth.getUid());
-                                motociclista.setEmail(email);
-                                motociclista.setNome(nome);
-                                motociclista.setDescricao(descricao);
-                                motociclista.setTelefone(telefone);
-                                motociclista.salvarMotociclista();
-                                chamarPerfilMotociclista();
-                            }
-                        });
+                        presenter.salvarMotociclista(new Motociclista( nome,  email,  senha,  descricao, telefone, disponivel));
                     }else{
                         Toast.makeText(CadastroMotociclista.this, "Senhas diferentes!", Toast.LENGTH_SHORT).show();
                     }
                 }else{
                     Toast.makeText(CadastroMotociclista.this, "Todos os campos devem estar preenchidos!", Toast.LENGTH_SHORT).show();
                 }
+                
+            }
+        });
+
+        botaoRegistroLogarMotociclista.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.goToLogin();
             }
         });
 
@@ -110,23 +104,24 @@ public class CadastroMotociclista extends AppCompatActivity implements CadastroM
 
     }
 
-    public void chamarPerfilMotociclista(){
-        Intent intent = new Intent(CadastroMotociclista.this, PerfilMotociclistaActivity.class);
-        startActivity(intent);
-        finish();
-    }
-    public void chamarLogin(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+
+    @Override
+    public void onSavedErrorAuth(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
-    public void onSavedError(String message) {
-
+    public void onSavedErrorRT(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public Context getContext() {
-        return null;
+        return getApplicationContext();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 }

@@ -20,26 +20,26 @@ public class CadastroClientePresenter implements CadastroClienteContracts.Presen
 
     @Override
     public void salvarCliente(Cliente cliente) {
-
+        interactor.salvaClienteAuth(cliente);
     }
 
     @Override
-    public void onClienteSaved(Cliente cliente) {
-
+    public void onClienteSaved() {
+        router.goToPrincipalActivity();
     }
 
     @Override
     public void onClienteAuthSaved(Cliente cliente) {
-
+        interactor.salvaClienteRT(cliente);
     }
 
     @Override
     public void onSavedErrorAuth(String message) {
-
+        view.onSavedError(message);
     }
 
     @Override
     public void onSavedErrorRT(String message) {
-
+        view.onSavedError(message);
     }
 }

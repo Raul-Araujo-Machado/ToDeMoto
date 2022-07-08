@@ -17,7 +17,7 @@ public class Cliente implements Serializable {
     public Cliente(String nome, String email, String senha) {
         this.nome = nome;
         this.email = email;
-        this.id = senha;
+        this.senha = senha;
     }
 
 
@@ -53,8 +53,13 @@ public class Cliente implements Serializable {
         this.senha = senha;
     }
 
-    public void salvarCliente(){
-        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-        referencia.child("Usuarios/Cliente").child(getId()).setValue(this);
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

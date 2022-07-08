@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.todemoto.cadastro_cliente.view.CadastroCliente;
 import com.example.todemoto.cadastro_motociclista.view.CadastroMotociclista;
+import com.example.todemoto.login.view.LoginActivity;
 
 public class MainActivity extends AppCompatActivity {
 

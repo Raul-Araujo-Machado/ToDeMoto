@@ -6,16 +6,19 @@ import com.example.todemoto.cadastro_motociclista.entity.Motociclista;
 
 public interface CadastroMotociclistaContracts {
     interface View {
-        void onSavedError(String message);
+        void onSavedErrorAuth(String message);
+        void onSavedErrorRT(String message);
         Context getContext();
+        void finish();
     }
 
     interface Presenter {
         void salvarMotociclista(Motociclista motociclista);
-        void onMotociclistaSaved(Motociclista motociclista);
+        void onMotociclistaSaved();
         void onMotociclistaAuthSaved(Motociclista motociclista);
         void onSavedErrorAuth(String message);
         void onSavedErrorRT(String message);
+        void goToLogin();
     }
 
     interface Interactor {
@@ -24,6 +27,7 @@ public interface CadastroMotociclistaContracts {
     }
 
     interface Router {
-        void goToPerfilMotociclista(Motociclista motociclista);
+        void goToPerfilMotociclista();
+        void goToLogin();
     }
 }

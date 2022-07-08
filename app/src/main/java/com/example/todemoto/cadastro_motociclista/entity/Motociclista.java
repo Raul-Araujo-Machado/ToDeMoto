@@ -13,16 +13,33 @@ public class Motociclista implements Serializable {
     private String descricao;
     private String telefone;
     private String id;
+    private Boolean disponivel;
 
-    public Motociclista() {
+    public Boolean getDisponivel() {
+        return disponivel;
     }
 
-    public Motociclista(String nome, String email, String senha, String descricao, String telefone) {
+    public void setDisponivel(Boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+
+    public Motociclista(){
+    }
+
+    public Motociclista(String nome, String email, String senha, String descricao, String telefone, boolean disponivel) {
         this.nome = nome;
         this.email = email;
         this.senha = senha;
         this.descricao = descricao;
         this.telefone = telefone;
+        this.disponivel = disponivel;
+    }
+
+    public Motociclista(String nome, String email, String telefone, String id) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.id = id;
     }
 
     public String getNome() {
@@ -61,8 +78,16 @@ public class Motociclista implements Serializable {
         this.senha = senha;
     }
 
-    public void salvarMotociclista(){
-        DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
-        referencia.child("Usuarios/Motociclista").child(getId()).setValue(this);
+    @Override
+    public String toString() {
+        return "Motociclista{" +
+                "nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", senha='" + senha + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", id='" + id + '\'' +
+                ", disponivel=" + disponivel +
+                '}';
     }
 }

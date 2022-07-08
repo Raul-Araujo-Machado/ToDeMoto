@@ -3,14 +3,18 @@ package com.example.todemoto.edicao_cliente.view;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.todemoto.PerfilClienteActivity;
+import com.example.todemoto.edicao_cliente.EdicaoClienteContracts;
+import com.example.todemoto.edicao_cliente.presenter.EdicaoClientePresenter;
+import com.example.todemoto.perfil_cliente.view.PerfilClienteActivity;
 import com.example.todemoto.R;
 import com.example.todemoto.cadastro_cliente.entity.Cliente;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,89 +24,64 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class EdicaoClienteActivity extends AppCompatActivity {
+public class EdicaoClienteActivity extends AppCompatActivity implements EdicaoClienteContracts.View {
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();;
     private EditText nomeClienteEdicao;
-    private EditText emailClienteEdicao;
+    private TextView emailClienteEdicao;
     private Button atualizaClienteEdicao;
     private Button cancelaClienteEdicao;
+    private EdicaoClienteContracts.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edicao_cliente);
 
+        presenter = new EdicaoClientePresenter(this);
         nomeClienteEdicao = findViewById(R.id.nomeClienteEdicao);
         emailClienteEdicao = findViewById(R.id.emailClienteEdicao);
         atualizaClienteEdicao = findViewById(R.id.atualizaClienteEdicao);
         cancelaClienteEdicao = findViewById(R.id.cancelaClienteEdicao);
 
-        carregarInformações();
-        botaoCancela();
-        botaoAtualiza();
-    }
+        Cliente c = (Cliente) getIntent().getSerializableExtra("cliente");
+        System.out.println("teste: Peguei o objeto "+ c.getNome()+c.getEmail());
 
-    private void carregarInformações(){
-        String user = mAuth.getUid();
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Usuarios/Cliente/" + user);
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Cliente c = (Cliente) snapshot.getValue(Cliente.class);
-                System.out.println("teste"+c.getNome());
-                nomeClienteEdicao.setText(c.getNome());
-                emailClienteEdicao.setText(c.getEmail());
-            }
+        nomeClienteEdicao.setText(c.getNome());
+        emailClienteEdicao.setText(c.getEmail());
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-    private void botaoCancela(){
         cancelaClienteEdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EdicaoClienteActivity.this, PerfilClienteActivity.class);
-                startActivity(intent);
-                finish();
+                presenter.goToPerfilCliente();
             }
         });
-    }
-    private void botaoAtualiza(){
+
         atualizaClienteEdicao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String n = nomeClienteEdicao.getText().toString();
-                String e = emailClienteEdicao.getText().toString();
-                String user = mAuth.getUid();
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = database.getReference("Usuarios").child("Cliente").child(user);
-                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Cliente c = (Cliente) snapshot.getValue(Cliente.class);
-                        System.out.println("teste"+c.getNome());
-                        myRef.child("nome").setValue(n);
-                        myRef.child("email").setValue(e);
-                        Toast.makeText(EdicaoClienteActivity.this, "Dados atualizados!", Toast.LENGTH_SHORT).show();
-                        chamarPerfil();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                presenter.atualizaDados(c, n);
             }
         });
+
     }
-    public void chamarPerfil(){
-        Intent intent = new Intent(this, PerfilClienteActivity.class);
-        startActivity(intent);
-        finish();
+
+
+    @Override
+    public void onSavedError(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
+    @Override
+    public void onSavedSucess(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        presenter.goToPerfilCliente();
+    }
+
+    @Override
+    public Context getContext() {
+        return getApplicationContext();
+    }
+
 }

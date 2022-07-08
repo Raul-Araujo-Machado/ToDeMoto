@@ -9,10 +9,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
-            android:name=".EdicaoMotociclistaActivity"
+            android:name=".edicao_motociclista.view.EdicaoMotociclistaActivity"
             android:exported="false" />
         <activity
-            android:name=".Loading"
+            android:name=".loading.view.Loading"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,16 +21,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".PerfilMotociclistaActivity"
+            android:name=".perfil_motociclista.view.PerfilMotociclistaActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.view.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".edicao_cliente.view.EdicaoClienteActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilClienteActivity"
+            android:name=".perfil_cliente.view.PerfilClienteActivity"
             android:exported="false" />
         <activity
             android:name=".PrincipalActivity"

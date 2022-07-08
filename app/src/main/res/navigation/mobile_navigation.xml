@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_disponiveis"
-        android:name="com.example.todemoto.ui.Disponiveis.DisponiveisFragment"
-        android:label="@string/menu_home"
+        android:name="com.example.todemoto.disponiveis.view.DisponiveisFragment"
+        android:label="Disponíveis"
         tools:layout="@layout/fragment_disponiveis" />
 
     <fragment
         android:id="@+id/nav_favoritos"
         android:name="com.example.todemoto.ui.Favoritos.FavoritosFragment"
-        android:label="@string/menu_gallery"
+        android:label="Favoritos"
         tools:layout="@layout/fragment_favoritos" />
 
     <fragment
         android:id="@+id/nav_historico"
         android:name="com.example.todemoto.ui.Historico.HistoricoFragment"
-        android:label="@string/menu_slideshow"
+        android:label="Histórico"
         tools:layout="@layout/fragment_historico" />
 </navigation>

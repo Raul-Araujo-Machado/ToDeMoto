@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilMotociclistaActivity">
+    tools:context=".perfil_motociclista.view.PerfilMotociclistaActivity">
 
 
 
@@ -18,7 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+        android:src="@mipmap/avatar_round"/>
 
     <Button
         android:id="@+id/editarMotociclistaPerfil"
@@ -100,13 +100,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Visualizar"
-        app:layout_constraintBottom_toTopOf="@+id/switch1"
+        app:layout_constraintBottom_toTopOf="@+id/disponivelMotociclistaPerfil"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/editarMotociclistaPerfil" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/disponivelMotociclistaPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="550dp"

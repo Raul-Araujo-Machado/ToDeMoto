@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PerfilClienteActivity">
+    tools:context=".perfil_cliente.view.PerfilClienteActivity">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -16,14 +16,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_background" />
+        android:src="@mipmap/avatar_round"/>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/editarPerfilCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="540dp"
-        android:onClick="chamarEditarCliente"
         android:text="Editar Perfil"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

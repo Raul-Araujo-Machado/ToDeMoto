@@ -36,7 +36,6 @@ public class CadastroCliente extends AppCompatActivity implements CadastroClient
     private Button botaoRegistroCliente;
     private TextView botaoRegistroLogar;
     private CheckBox checkBoxRegistroCliente;
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
     private CadastroClienteContracts.Presenter presenter;
 
 
@@ -86,23 +85,9 @@ public class CadastroCliente extends AppCompatActivity implements CadastroClient
                     //verificando se o usuario digitou senhas iguais. Caso sim, posso inserir os dados no banco
                     if (senha.equals(confsenha)){
                         //evento para inserir no banco. No firebase ficaria assim:
-                        Cliente cliente = new Cliente();
-                        cliente.setEmail(emailRegistroCliente.getText().toString());
-                        cliente.setNome(nomeRegistroCliente.getText().toString());
-                        mAuth.createUserWithEmailAndPassword(cliente.getEmail(),senha).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()){
-                                    cliente.setId(mAuth.getUid());
+                        System.out.println("teste para view: "+nome +email + senha);
+                        presenter.salvarCliente(new Cliente(nome, email, senha));
 
-                                    cliente.salvarCliente();
-                                    chamarPrincipal();
-                                }else{
-                                    String erro = task.getException().getMessage();
-                                    Toast.makeText(CadastroCliente.this, ""+erro, Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
                     }else{
                         //caso tenha colocado senhas diferentes
                         Toast.makeText(CadastroCliente.this, "As senhas estão diferentes!", Toast.LENGTH_SHORT).show();
@@ -123,11 +108,16 @@ public class CadastroCliente extends AppCompatActivity implements CadastroClient
 
     @Override
     public void onSavedError(String message) {
-
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public Context getContext() {
         return getApplicationContext();
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
     }
 }

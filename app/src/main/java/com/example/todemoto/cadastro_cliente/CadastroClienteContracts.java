@@ -8,11 +8,12 @@ public interface CadastroClienteContracts {
     interface View {
         void onSavedError(String message);
         Context getContext();
+        void finish();
     }
 
     interface Presenter {
         void salvarCliente(Cliente cliente);
-        void onClienteSaved(Cliente cliente);
+        void onClienteSaved();
         void onClienteAuthSaved(Cliente cliente);
         void onSavedErrorAuth(String message);
         void onSavedErrorRT(String message);
@@ -24,6 +25,6 @@ public interface CadastroClienteContracts {
     }
 
     interface Router {
-        void goToPrincipalActivity(Cliente cliente);
+        void goToPrincipalActivity();
     }
 }
