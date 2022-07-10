@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDeMoto">
         <activity
+            android:name=".VisitaPerfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".edicao_motociclista.view.EdicaoMotociclistaActivity"
             android:exported="false" />
         <activity

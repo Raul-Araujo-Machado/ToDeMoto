@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VisitaPerfilActivity">
+
+    <ImageView
+        android:id="@+id/imagemMotociclistaVisita"
+        android:layout_width="160dp"
+        android:layout_height="146dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baixados" />
+
+    <TextView
+        android:id="@+id/nomeMotociclistaVisita"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Travis Scott"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagemMotociclistaVisita" />
+
+    <TextView
+        android:id="@+id/descricaoMotociclistaVisita"
+        android:layout_width="327dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="24dp"
+        android:text="Aqui um motociclista pode falar um pouco de sua carreira, de seus valores, seu tempo de profissão ... é um espaço livre para descrição com até 250 caracteres."
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeMotociclistaVisita" />
+
+    <TextView
+        android:id="@+id/solicitarServico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="270dp"
+        android:drawableLeft="@drawable/ic_message"
+        android:text="Combinar Serviço"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descricaoMotociclistaVisita" />
+</androidx.constraintlayout.widget.ConstraintLayout>
